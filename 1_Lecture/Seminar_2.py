@@ -66,8 +66,27 @@ if head < tail:
     print(f'Минимальное кол-во монет, котрые необходимо перевернуть : {head}')
 else:
     print(f'Минимальное кол-во монет, котрые необходимо перевернуть : {tail}')
-"""
 
+
+#Решение_2   
+ 
+# n = int(input())
+# count_zero = 0
+# count_one = 0
+
+# for i in range(n):
+#     x = int(input())
+#     if x == 0:
+#         count_zero += 1
+#     else:
+#         count_one += 1
+#     if count_one > count_zero:
+#         print(count_zero)
+# else:
+#     print(count_one)    
+    
+"""    
+    
 
 """
 # Задача 11:
@@ -171,7 +190,16 @@ if x != None:
     y = numberS - x
     print(f"Петя загадал числа {x} и {y}")
 else: print("НЕТ РЕШЕНИЙ")
-        
+
+#Решение_3
+
+x = int(input())
+y = int(input())
+for i in range(x):
+    for j in range(y):
+        if x == i + j and y == i * j:
+            print(i, j)
+
 """
 
 
@@ -244,6 +272,14 @@ num = int(input("Введите число : "))
 i = 0
 while pow(2,i) <= num:
     print(pow(2,i),end = " ")
+    i += 1
+
+#Решение_2 
+
+n = int(input())
+i = 0
+while 2 ** i <= n:
+    print(2 ** i)
     i += 1
 
 """
