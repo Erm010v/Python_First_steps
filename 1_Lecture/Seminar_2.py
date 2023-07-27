@@ -35,7 +35,7 @@ print(k)
 
 """
 
-
+"""
 # Задача 10:
 
 # На столе лежат n монеток. Некоторые из них лежат 
@@ -47,13 +47,29 @@ print(k)
 # 5 -> 1 0 1 1 0
 # 2
 
+# РЕЩЕНИЕ_ЗАДАЧИ_10
+
+#Решение_1
+
+c = 'ООРРРОООРОРОРРРРОРОРРРРРРР'
+p = 'Р'
+
+head = 0
+tail = 0
+
+for i in c:
+    if i == p:
+        head += 1
+    else:
+        tail += 1
+if head < tail:
+    print(f'Минимальное кол-во монет, котрые необходимо перевернуть : {head}')
+else:
+    print(f'Минимальное кол-во монет, котрые необходимо перевернуть : {tail}')
+"""
 
 
-
-
-
-
-
+"""
 # Задача 11:
 
 # Дано натуральное число A > 1. Определите, каким по
@@ -92,11 +108,10 @@ print(k)
 #     i += 1
 # print(i+2)
 
+"""
 
 
-
-
-
+"""
 # Задача 12: 
 
 # Петя и Катя – брат и сестра. Петя – студент, 
@@ -109,9 +124,58 @@ print(k)
 # 4 4 -> 2 2
 # 5 6 -> 2 3
 
+# РЕЩЕНИЕ_ЗАДАЧИ_12
+
+#Решение_1 - через дискриминант
+
+# import math
+
+# S = 10
+# P = 24
+
+# D = S ** 2 - 4 * P
+
+# if D < 0:
+#     print('Петя посчитал некорректно : ')
+
+# Y1 = int((S + math.sqrt(D)) / 2)
+# Y2 = int((S - math.sqrt(D)) / 2)
+
+# X1 = S - Y1
+# X2 = S - Y2
+
+# if X1 == Y2:
+#     print ((X1, X2))
+# else:
+#     print((X1,Y1),(X2, Y2))
+
+#Решение_2 - через бинарный поиск и цикл
+
+numberS = int(input("Сумма загаданных чисел равна"))
+numberP = int(input("Произведение загаданных чисел равна"))
+
+def binFind(numS, numP):
+    left = 1
+    right = numS//2 + 1
+    while left <= right:
+        middle = (left + right) // 2
+        if numP/middle == numS - middle:
+            return middle
+        elif middle * (numS - middle) < numP:
+            left = middle + 1
+        else: right = middle - 1
+    else: return None
+x = binFind(numberS, numberP)
+
+if x != None:
+    y = numberS - x
+    print(f"Петя загадал числа {x} и {y}")
+else: print("НЕТ РЕШЕНИЙ")
+        
+"""
 
 
-
+"""
 
 # Задача_13: 
 
@@ -133,6 +197,10 @@ print(k)
 # Input: 6 -> -20 30 -40 50 10 -10
 # Output: 2
 
+# РЕЩЕНИЕ_ЗАДАЧИ_13
+
+#Решение_1
+
 # n = int(input('Введите число дней :'))
 # i = 1
 # days = 0
@@ -140,9 +208,26 @@ print(k)
 #     tempr = int(input('Введите среднесуточную температуру'))
 #     if t > 0:
 
+import random
+days = int(input('Кол-во дней:'))
+if days >= 1 and days <= 100:
+    #temperature = [int(input(f"Температура - день {i + 1}: ")) for i in range(days)] #Ручной ввод показаний
+    temperature = []
+    maxHotCount = 0
+    tempCount = 0
+    for i in range(days):
+        temperature.append(random.radint(-50,50)) #Выключить при активации ручного ввода показаний
+        if temperature[i] > 0:
+            tempCount += 1
+            if tempCount > maxHotCount: # текущий список обнуляется если отрицательная температура
+                maxHotCount = tempCount
+        else: tempCount = 0
+    print(f"{temperature} -> {maxHotCount}")
+else: print("Некорректный ввод (1 ≤ N ≤ 100)")
 
+"""
 
-
+"""
 # Задача 14: 
 
 # Требуется вывести все целые степени двойки 
@@ -150,15 +235,21 @@ print(k)
 # 10 -> 1 2 4 8
 
 
+# РЕЩЕНИЕ_ЗАДАЧИ_14
+
+#Решение_1
+
+import math
+num = int(input("Введите число : "))
+i = 0
+while pow(2,i) <= num:
+    print(pow(2,i),end = " ")
+    i += 1
+
+"""
 
 
-
-
-
-
-
-
-
+"""
 
 # Задача_15:
 
@@ -175,6 +266,10 @@ print(k)
 # Input: 5 -> 5 1 6 5 9
 # Output: 1 9
 
+# РЕЩЕНИЕ_ЗАДАЧИ_15
+
+#Решение_1
+
 n = int(input())
 arb = int(input())
 maxarb = arb
@@ -188,12 +283,10 @@ for i in range (n-1):
 print(minarb, maxarb)
 
 
+"""
 
 
-
-
-
-
+"""
 
 # Задача_*
 # Дана строка текста, сосотоящая из букв русского алфавита
@@ -223,3 +316,6 @@ print(minarb, maxarb)
 #     print(t)
 # else:
 #     print(0)
+
+
+"""
