@@ -22,6 +22,13 @@ for i in lst: # проход по значениям (элементам из с
         count += 1
 print(count)
 
+#Решение_2
+count = 0
+for i in range(len(list_1)):
+    if list_1[i] == k:
+        count += 1
+print(count)
+
 """
 
 """
