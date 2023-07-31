@@ -200,8 +200,6 @@ print(len(ltr))
 """
 
 
-
-
 """
 # Задача_29:
 # Ваня и Петя поспорили, кто быстрее решит
@@ -240,7 +238,6 @@ print(len(ltr))
 #Решение_1
 
 """
-
 
 
 """
@@ -330,9 +327,9 @@ print(m[key])
 # Sample Output 2:
 # 1 2 7 8
 
-#string = {"1": "222anton456","2": "a1n1t1o1n1","3": "0000a0000n00t00000o000000n","4": "gylfole","5": "richard","6": "ant0n"}
+# string = {"1": "222anton456","2": "a1n1t1o1n1","3": "0000a0000n00t00000o000000n","4": "gylfole","5": "richard","6": "ant0n"}
 
-#string = {"1": "osfjwoiergwoignaewpjofwoeijfnwfonewfoignewtowenffnoeiwowjfninoiwfen","2": "anton","3": "aoooooooooontooooo","4": "elelelelelelelelelel","5": "ntoneeee","6": "tonee","7": "253235235a5323352n25235352t253523523235oo235523523523n","8": "antoooooooooooooooooooooooooooooooooooooooooooooooooooon","9": "unton"}
+# string = {"1": "osfjwoiergwoignaewpjofwoeijfnwfonewfoignewtowenffnoeiwowjfninoiwfen","2": "anton","3": "aoooooooooontooooo","4": "elelelelelelelelelel","5": "ntoneeee","6": "tonee","7": "253235235a5323352n25235352t253523523235oo235523523523n","8": "antoooooooooooooooooooooooooooooooooooooooooooooooooooon","9": "unton"}
 
 # Решение_задачи_ХОЛОДИЛЬНИКИ_1:
 
@@ -345,7 +342,6 @@ print(m[key])
 #         return("Virus")
 # for i in string:
 #     print(f'{i} - {Check_Virus(string[i], "anton")}')
-
 
 
 # inp = 'elelelelelelelelelel'

@@ -11,12 +11,19 @@
 
 # РЕШЕНИЕ_ЗАДАЧИ_26
 
-#Решение_1
+# Решение_1
+
+# def recAB(a, b):
+#     if b == 0:
+#         return 1
+#     return a * recAB(a, b - 1)
 
 
+# a = int(input('Введите число: '))
+# b = int(input('Введите степень: '))
+# print(recAB(a, b))
 
 
-"""
 # Задача_28:
 
 # Напишите рекурсивную функцию sum(a, b),
@@ -29,12 +36,25 @@
 
 # РЕШЕНИЕ_ЗАДАЧИ_28
 
-#Решение_1
+# Решение_1
+
+# a = int(input("Введите первое неотрицательное число: "))
+# b = int(input("Введите второе неотрицательное число: "))
+# if a > b:
+#     a, b = b, a
+
+
+# def recursive_sum(a, b):
+#     if a == 0:
+#         return b
+#     else:
+#         return recursive_sum(a - 1, b + 1)
+
+
+# print(recursive_sum(a, b))
+
 
 """
-
-
-
 # Задача_31
 
 # Последовательностью Фибоначчи называется
@@ -48,14 +68,19 @@
 #  = ak-1 + ak-2 (k > 1).
 # Требуется найти N-е число Фибоначчи
 # Input: 7
-# Output: 21
+# Output: 13
 
 # РЕШЕНИЕ_ЗАДАЧИ_31
 
-#Решение_1
+# Решение_1
 
+# def fib(n):
+#     if n in [1,2]:
+#         return 1
+#     return fib(n-1) + fib(n-2)
 
-
+# print(fib(7))
+"""
 
 """
 # Задача_33:
@@ -102,8 +127,7 @@
 # print(list_1)
 """
 
-
-
+"""
 # Задача_35:
 
 # Напишите функцию, которая принимает одно число и
@@ -111,15 +135,27 @@
 # Напоминание: Простое число - это число, которое
 # имеет 2 делителя: 1 и n(само число)
 # Input: 5
-# Output: yes 
+# Output: yes
 
 # РЕШЕНИЕ_ЗАДАЧИ_35
 
-#Решение_1
+# Решение_1
+
+def isPrime(n, delim=2):
+    if n < 2:
+        return False
+    if n == 2 or delim * delim > n:
+        return True
+    if n % delim == 0:
+        return False
+    return isPrime(n, delim + 1)
+# if delim * delim > n - точно будет простое число, дальнейщая проверка не требуется
 
 
+print(isPrime(101))
+"""
 
-
+"""
 # Задача_37:
 
 # Дано натуральное число N и
@@ -134,18 +170,45 @@
 
 # РЕШЕНИЕ_ЗАДАЧИ_37
 
-#Решение_1
+# Решение_1
+
+# def f(n):
+#     if n == 0:
+#         return ''
+#     k = int(input())
+#     return f(n-1) + f' {k}'
 
 
+# n = int(input())
+# print(f(n))
+
+# Решение_2
+
+# def polindrom(word):
+#     if len(word) < 2:
+#         return True
+#     elif word[0] != word[-1]:
+#         return False
+#     return polindrom(word[1:-1])
+
+
+# print(polindrom("арозаупаланалапуазора"))
+"""
+
+"""
 # Задача_*:
 
 # Найти факториал числа через рекурсию:
 
-num = 4
+# Решение_*
+num = 3
+
 
 def fact(num):
-    if num==1:
-        return num
+    if num == 0:
+        return num+1
     return num*fact(num-1)
 
+
 print(fact(num))
+"""
