@@ -53,7 +53,6 @@
 
 # print(recursive_sum(a, b))
 
-
 """
 # Задача_31
 
