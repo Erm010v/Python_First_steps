@@ -173,8 +173,8 @@ p = [a + i * d for i in range(int(n))]
 # # Решение_1
 
 
-# a = input().split()
-# print(sum(a.count(x) - 1 for x in a) // 2)
+a = input().split()
+print(sum(a.count(x) - 1 for x in a) // 2)
 """
 
 """
@@ -221,10 +221,5 @@ for i in range(1, k + 1):
         if i != j and summa(j) == i:
             list_1.append(j)
             print(i, j)
-
-# # Решение_2 - создать список из кортежей
-
-
-
 
 """
