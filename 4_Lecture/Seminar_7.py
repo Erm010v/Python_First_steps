@@ -1,4 +1,4 @@
-"""
+
 # Задача 34:
 
 # Винни-Пух попросил Вас посмотреть, есть ли в его стихах ритм. Поскольку
@@ -19,7 +19,7 @@
 # РЕШЕНИЕ_ЗАДАЧИ_34
 
 # Решение_1
-
+"""
 def rhythm(str):
     str = str.split()
     list_1 = []
@@ -39,7 +39,30 @@ else:
     print('Пам парам')
 """
 
+# Решение_2
 """
+inp = "пара-ра-рам рам-пам-папам па-ра-па-дам"
+answerRight = "Парам пам-пам"
+answerWrong = "Пам парам"
+vowels = ['у', 'е', 'ё', 'ы', 'а', 'о', 'э', 'я', 'и', 'ю']
+
+print(answerRight
+      # x for x in l.lower() if x in vowels - новый список только из гласных элементов
+      # lambda l: len([x for x in l.lower() if x in vowels] - лябда функции вычисляет длину
+      # делается множество set(map(lambda l.....
+      # проверка длины, если равно 1, тогда списки с одинаковым кол-вом гласных
+      if len(set(map(lambda l: len([x for x in l.lower() if x in vowels]), inp.split()))) == 1
+      else answerWrong
+      )
+"""
+# Решение_3
+
+# в списке countVowels счетчик count считает кол-во countVowels с индексом 0
+# далее сравнивает с длиной списка
+# countVowels.count(countVowels[0]) == len(countVowels):
+# если все равны, тогда count равен длине списка
+
+
 # Задача_36:
 
 # Напишите функцию print_operation_table(operation, num_rows=6, num_columns=6),
@@ -63,15 +86,30 @@ else:
 
 # РЕШЕНИЕ_ЗАДАЧИ_36
 
+
 # Решение_1
+"""
 def print_operation_table(operation, num_rows=6, num_columns=6):
-    a = [[operation(i, j) for j in range(1, num_columns + 1)] for i in range(1, num_rows + 1)]
+    a = [[operation(i, j) for j in range(1, num_columns + 1)]
+         for i in range(1, num_rows + 1)]
     for i in a:
         print(*[f"{x:>3}" for x in i])
 
 
 print_operation_table(lambda x, y: x * y)
+"""
 
+# Решение_2
+
+"""
+def print_operation_table(operation, num_rows=6, num_columns=6):
+    for i in range(1, num_rows + 1):
+        for j in range(1, num_columns + 1):
+            print(operation(i, j), end=" ")
+        print()
+
+
+print_operation_table(lambda x, y: x * y)
 """
 
 # Задача_47:
@@ -88,8 +126,6 @@ print_operation_table(lambda x, y: x * y)
 # Напишите такое лямбда-выражение transformation, чтобы transformed_values получился
 # копией values.
 
-"""
-# Задача_47:
 # Ввод:
 # values = [1, 23, 42, ‘asdfg’]
 # transformed_values = list(map(trasformation, values))
@@ -103,7 +139,7 @@ print_operation_table(lambda x, y: x * y)
 # РЕШЕНИЕ_ЗАДАЧИ_47
 
 # Решение_1
-
+"""
 def transformation(x): return x
 
 
@@ -115,7 +151,7 @@ else:
     print('fail')
 """
 
-"""
+
 # Задача_49:
 
 # Планеты вращаются вокруг звезд по эллиптическим орбитам.
@@ -137,8 +173,7 @@ else:
 # имеющий такую площадь. Гарантируется, что самая далекая
 # планета ровно одна
 
-# Ввод:
-orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
+
 # print(*find_farthest_orbit(orbits))
 # Вывод:
 # 2.5 10
@@ -146,8 +181,9 @@ orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
 # РЕШЕНИЕ_ЗАДАЧИ_49
 
 # # Решение_1
-
-
+"""
+# Ввод:
+orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
 def is_circle(tup):
     if tup[0] == tup[1]:
         return None
@@ -171,6 +207,7 @@ print(find_farthest_orbit(orbits))
 orbits = [(1, 3), (2.5, 10), (7, 2), (6, 6), (4, 3)]
 print(max(orbits, key=lambda x: (x[0] != x[1]) * x[0] * x[1]))
 """
+
 
 # Задача_51:
 
@@ -196,3 +233,20 @@ print(max(orbits, key=lambda x: (x[0] != x[1]) * x[0] * x[1]))
 # РЕШЕНИЕ_ЗАДАЧИ_51:
 
 # Решение_1
+"""
+def same_by(characteristic, objects):
+    new = list(filter(characteristic, objects))
+    print(new)
+
+    if new == objects:
+        return True
+    return False
+
+
+def char(x):
+    return x % 2 == 0
+
+
+values = [2, 4, 5]
+print(same_by(char, values))
+"""
